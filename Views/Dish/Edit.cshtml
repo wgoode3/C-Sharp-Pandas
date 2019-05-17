@@ -1,0 +1,28 @@
+@model Dish 
+
+<a href="/">Home</a>
+
+<form action="/update/@Model.DishId" method="post">
+    <input type="text" name="Chef" placeholder="Chef" class="form-control" value="@Model.Chef" />
+    <input type="text" name="Name" placeholder="Name" class="form-control" value="@Model.Name" />
+    <input type="number" name="Calories" placeholder="Calories" class="form-control" min="1" value="@Model.Calories" />
+    <select class="form-control" name="Tastiness" value="@Model.Tastiness">
+        @for(int i=1; i<6; i++)
+        {
+            if(Model.Tastiness == i)
+            {
+                <option selected="selected">@i</option>
+            }
+            else
+            {
+                <option>@i</option>
+            }
+        }
+    </select>
+    <textarea name="Description" placeholder="Description" class="form-control">@Model.Description</textarea>
+    <input type="submit" value="Update" class="btn btn-success" />
+</form>
+
+<form action="/delete/@Model.DishId" method="post">
+    <input type="submit" value="Delete" class="btn btn-danger" />
+</form>

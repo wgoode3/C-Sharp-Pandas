@@ -1,0 +1,15 @@
+<a href="/">Home</a>
+
+<form action="/create" method="post">
+    <input type="text" name="Chef" placeholder="Chef" class="form-control" />
+    <input type="text" name="Name" placeholder="Name" class="form-control" />
+    <input type="number" name="Calories" placeholder="Calories" class="form-control" min="1" />
+    <select class="form-control" name="Tastiness">
+        @for(int i=1; i<6; i++)
+        {
+            <option>@i</option>
+        }
+    </select>
+    <textarea name="Description" placeholder="Description" class="form-control"></textarea>
+    <input type="submit" class="btn btn-success" />
+</form>
